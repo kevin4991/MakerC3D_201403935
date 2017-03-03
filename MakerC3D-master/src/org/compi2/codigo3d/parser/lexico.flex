@@ -26,6 +26,17 @@ POT             = "^"
 PAR_IZQ         = "("
 PAR_DER         = ")"
 
+IGUAL           = "=="
+DIFERENTE       = "!="
+MAYORQUE        = ">"
+MENORQUE        = "<"
+MAYORIGUAL      = ">="
+MENORIGUAL      = "<="
+
+AND_LOGICO      = "&&"
+OR_LOGICO       = "||"
+NOT_LOGICO      = "!"
+
 ID              = [A-Za-z][_0-9A-Za-z]*
 ENTERO          = [0-9]+
 DECIMAL         = [0-9]+"."[0-9]+
@@ -45,6 +56,17 @@ ENTER   = [\ \n]
 <YYINITIAL> {POT}	    { return new Symbol(sym.POT, yyline, yycolumn, null); }
 <YYINITIAL> {PAR_IZQ}	    { return new Symbol(sym.PAR_IZQ, yyline, yycolumn, null); }
 <YYINITIAL> {PAR_DER}	    { return new Symbol(sym.PAR_DER, yyline, yycolumn, null); }
+
+<YYINITIAL> {IGUAL}	    { return new Symbol(sym.IGUAL, yyline, yycolumn, null); }
+<YYINITIAL> {DIFERENTE}	    { return new Symbol(sym.DIFERENTE, yyline, yycolumn, null); }
+<YYINITIAL> {MAYORQUE}	    { return new Symbol(sym.MAYORQUE, yyline, yycolumn, null); }
+<YYINITIAL> {MENORQUE}	    { return new Symbol(sym.MENORQUE, yyline, yycolumn, null); }
+<YYINITIAL> {MAYORIGUAL}    { return new Symbol(sym.MAYORIGUAL, yyline, yycolumn, null); }
+<YYINITIAL> {MENORIGUAL}    { return new Symbol(sym.MENORIGUAL, yyline, yycolumn, null); }
+
+<YYINITIAL> {AND_LOGICO}    { return new Symbol(sym.AND_LOGICO, yyline, yycolumn, null); }
+<YYINITIAL> {OR_LOGICO}	    { return new Symbol(sym.OR_LOGICO, yyline, yycolumn, null); }
+<YYINITIAL> {NOT_LOGICO}    { return new Symbol(sym.NOT_LOGICO, yyline, yycolumn, null); }
 
 <YYINITIAL> {SPACE}     { /*Espacios en blanco, ignorados*/ }
 <YYINITIAL> {ENTER}     { /*Saltos de linea, ignorados*/}
